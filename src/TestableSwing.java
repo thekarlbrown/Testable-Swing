@@ -25,8 +25,8 @@ public class TestableSwing extends JFrame {
     //Initializes, arranges, and connects Swing components
     private void createAndShowGUI(){
         //Set title and close situation
-        JFrame jFrameTest = new JFrame("Cylinder Volume Calculator");
-        jFrameTest.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Cylinder Volume Calculator");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Initializes every component, setting static text where relevant
         radiusLabel = new JLabel();
@@ -60,7 +60,7 @@ public class TestableSwing extends JFrame {
                         .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(radiusTextField)
                                 .addComponent(heightTextField)
-                                .addComponent(volumeLabel))
+                                .addComponent(volumeLabel, 250,250,250))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addComponent(radiusLabel)
@@ -82,7 +82,7 @@ public class TestableSwing extends JFrame {
                                 .addComponent(heightLabel))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.CENTER)
-                                .addComponent(volumeLabel)
+                                .addComponent(volumeLabel, GroupLayout.PREFERRED_SIZE,GroupLayout.DEFAULT_SIZE,GroupLayout.PREFERRED_SIZE)
                                 .addComponent(calculateButton))
                         .addContainerGap(12, Short.MAX_VALUE)
         );

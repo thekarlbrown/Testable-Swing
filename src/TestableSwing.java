@@ -17,6 +17,11 @@ public class TestableSwing extends JFrame {
     private javax.swing.JTextField heightTextField;
     private javax.swing.JButton calculateButton;
 
+    //Getters for Test Cases
+    public JTextField getRadiusTextField() { return this.radiusTextField; }
+    public JTextField getHeightTextField() { return this.heightTextField; }
+    public JLabel getVolumeLabel() { return this.volumeLabel; }
+
     //Constructor to initialize Visuals
     public TestableSwing (){
         createAndShowGUI();
@@ -43,7 +48,7 @@ public class TestableSwing extends JFrame {
         calculateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                convertButtonActionPerformed(e);
+                convertButtonActionPerformed();
             }
         });
         calculateButton.setText("Calculate");
@@ -91,11 +96,9 @@ public class TestableSwing extends JFrame {
         pack();
     }
 
-    /**
-     * Performs calculations when button is clicked and sets Swing JFrame accordingly
-     * @param click ActionEvent passed from the button when clicked
-     */
-    private void convertButtonActionPerformed (ActionEvent click){
+
+     // Performs calculations when button is clicked and sets Swing JFrame accordingly, visible for Test Cases
+    public void convertButtonActionPerformed() {
         double volume = Math.pow(  (Double.parseDouble(radiusTextField.getText())) ,2)
                 * Math.PI
                 * (Double.parseDouble(heightTextField.getText()));
